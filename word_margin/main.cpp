@@ -79,7 +79,7 @@ int main() {
 			line += '\n';
 
 			line = margin + line;//add left margin
-			cout << "Inserting " << ": " << line << "\n";
+			//cout << "Inserting " << ": " << line << "\n";
 			outFile << line;
 			line = "";
 
@@ -90,17 +90,18 @@ int main() {
 			//reset for next line
 
 			charsPerLine = (100 - leftMargin - rightMargin) + charsPerLine;
-
+			
 			continue;
 		}
 
 		line = margin + line;//add left margin
-		cout << "Inserting " << ": " << line << "\n";
+		//cout << "Inserting " << ": " << line << "\n";
 		outFile << line;
 
 		//reset for next line
 		line = "";
 		charsPerLine = 100 - leftMargin - rightMargin;
+		
 
 	}//while
 

@@ -26,5 +26,14 @@
     <Text Include="DAT1.TXT">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="testFile2.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="testFile3.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="testFile4.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

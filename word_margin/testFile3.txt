@@ -1,0 +1,33 @@
+10
+15
+Fleurevca Francois
+Computer Organization
+Homework #7
+
+1a) 
+Average rotational delay is 60 / 10000 / 2 = 0.003 seconds. 
+Average seek delay = 1 / 250 = 0.004 seconds. 
+Time to transfer one sector = 512 / (100 × 106 ) = 0.00000512 seconds 
+
+Reading each sector incurs rotational delay and seeking delay because the sectors are randomly distributed on the disk. Average total time is controller overhead + 10 × (average rotational delay + average seek delay + data transfer delay of a sector) = 0.0002+ 10 × (0.003 + 0.004 + 0.00000512) = 0.0702512 seconds. 
+
+1b) the head needs to be moved and the disk needs be rotated for the head to be above the first sector of the file. Afterwards, the disk is rotated for 9/10 of a round for all the sectors to be read. average total time is controller overhead + average rotational delay + average seek delay + rotational delay of 9/10 of round + 10 × data transfer delay of a sector = 0.0002 + 0.003 + 0.004 + 0.006 × 9 / 10 + 10 × 0.00000512 = 0.0126512 seconds.
+
+1c) The disk needs to be rotated once to get all the heads on the sectors because they are all on the same location on the tracks in the cylinder.  Average total time is controller overhead + average rotational delay + average seek delay + 10 × data transfer delay of a sector = 0.0002 + 0.003 + 0.004 + 10 × 0.00000512 = 0.0072512 seconds. 
+
+1d)  the head needs to be moved and the disk needs to be rotated for the head to be above the first sector of the file. Then, the disk is rotated for one round for next sector to be read, because the sectors are arranged clockwise. Average total time is controller overhead + average rotational delay + average seek delay + 9 × rotational delay of a round + 10 × data transfer delay of a sector = 0.0002 + 0.003 + 0.004 + 9 × 0.006 + 10 × 0.00000512 = 0.0672512 seconds.
+
+1e) the head needs to be moved and the disk needs to be rotated for the head to be above the first sector of the file. Then, the disk is rotated for all the sectors to be read. Because the 10 sectors are contiguous, and there are many sectors on one track, we ignore the rotation time to move the sectors across the head. Average total time is controller overhead + average rotational delay + average seek delay + 10 × data transfer delay of a sector = 0.0002 + 0.003 + 0.004 + 10 × 0.00000512 = 0.0072512 seconds.
+
+1f) Since the sectors are randomly distributed on the disk, reading each sector incurs rotational delay and seeking delay. Additionally, each file incurs control overhead. Average total time is 10 × (controller overhead + average rotational delay + average seek delay + data transfer delay of a sector) = 10 × (0.0002 + 0.003 + 0.004 + 0.00000512) = 0.0720512 seconds. 
+2) Disk Read Time for a 4KB block = seek time + rotational delay + transfer time + controller overhead = 8 + (0.5*60*1000/7200) + (4*1024/20*220)*1000 + 2 = 14.17 ms 
+Processing Time = 20 * 106 * (1/(400*106 )) = 1/20 = 0.05 s = 50 ms 
+Disk Write Time for 4 KB block = 14.17 ms 
+Total time to completely process a 4 KB block = 2*14.17 + 50 = 78.34 ms 
+Number of blocks processed per second = 1000/78.34 = 12.76
+
+3a) 1500000 hours = 62500 days = about 171.2 years
+3b) Availability = MTTF / (MTTF + MTTR) = 62500 / (62500 + 3) = 0.99995 four nines
+3c) Assuming the device is in use for the full 8760 hours in a common year, there are two approaches to calculate AFR are acceptable, and you may use either MTTF or MTBF:
+ AFR = 8760 / MTTF = 8760 / 1500000 = 0.0058 AFR = 1 – e(-8760/MTTF) = 0.0058 
+3d) Expected number of failures per year is 0.0058 * 300000 = 1740. Therefore, the failures per day would be 4.8.
