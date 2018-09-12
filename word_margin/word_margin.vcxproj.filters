@@ -19,4 +19,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="testFile1.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="DAT1.TXT">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
