@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,7 +13,10 @@ int main() {
 	int rightMargin = 0;
 	int x = 0;
 	int charsPerLine = 100;
+	int lineCount = 0;
+	int orgCharsPerLine;
 	string word = "";
+	string befWord = "";
 	string line = "";
 	string fileName = "";
 	bool endOfLine = false;
@@ -38,6 +42,7 @@ int main() {
 	}//for
 
 	charsPerLine = 100 - leftMargin - rightMargin;
+	orgCharsPerLine = charsPerLine;
 
 	while ((ch = inFile.get()) != EOF) {
 
@@ -64,6 +69,8 @@ int main() {
 		if (ch != '\n' && charsPerLine >= 0) {
 
 			line += word;
+			lineCount = line.length();
+			befWord = word;
 			word = "";
 			continue; //keep adding to line
 		}
@@ -71,11 +78,14 @@ int main() {
 		//case 2. New line has been reached before char limit per line is reached
 		else if (ch == '\n' && charsPerLine >= 0) {
 			line += word + '\n';
+			lineCount = line.length();
+			befWord = word;
 			word = "";
 		}
 		//case 3. Number of chars per line was exceeded
 		else if (charsPerLine < 0) {
 
+			
 			line += '\n';
 
 			line = margin + line;//add left margin
@@ -84,7 +94,8 @@ int main() {
 			line = "";
 
 
-			line += word;
+			line = line + word;
+			befWord = word;
 			word = "";
 
 			//reset for next line
@@ -100,6 +111,7 @@ int main() {
 
 		//reset for next line
 		line = "";
+		lineCount = line.length();
 		charsPerLine = 100 - leftMargin - rightMargin;
 		
 
@@ -108,6 +120,7 @@ int main() {
 	inFile.close();
 	outFile.close();
 
-
+	system("pause");
 	return 0;
 }
+*/
